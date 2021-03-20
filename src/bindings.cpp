@@ -63,7 +63,7 @@ py::list get_valtonenornhag_arxiv_2021_frEfr_wrapper(const Eigen::Ref<const Eige
     }
 
     std::vector<DronePoseLib::RelPose> posedata =
-        DronePoseLib::ValtonenOrnhagArxiv2021::get_fEf(x1, x2, R1, R2, use_fast_solver);
+        DronePoseLib::ValtonenOrnhagArxiv2021::get_frEfr(x1, x2, R1, R2, use_fast_solver);
 
     py::list lst;
     for (int i = 0; i < posedata.size(); i++) {
