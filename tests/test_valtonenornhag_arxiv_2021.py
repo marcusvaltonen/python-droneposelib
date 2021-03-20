@@ -42,15 +42,15 @@ class ValtonenOrnhagArxiv2021fEfTestCase(unittest.TestCase):
         assert len(self.sols) == 4
 
     def test_valtonenornhag_arxiv_2021_fEf_sol0(self):
-        np.testing.assert_almost_equal(self.sols[0]['f'], 5.998701610439166, self.tol)
+        np.testing.assert_almost_equal(self.sols[0]['f'], 5.998701610439096, self.tol)
         verify(verify_numpy_array(self.sols[0]['F']))
 
     def test_valtonenornhag_arxiv_2021_fEf_sol1(self):
-        np.testing.assert_almost_equal(self.sols[1]['f'], -10.455953354056966, self.tol)
+        np.testing.assert_almost_equal(self.sols[1]['f'], -10.455953354057023, self.tol)
         verify(verify_numpy_array(self.sols[1]['F']))
 
     def test_valtonenornhag_arxiv_2021_fEf_sol2(self):
-        np.testing.assert_almost_equal(self.sols[2]['f'], 51.610462716016606, self.tol)
+        np.testing.assert_almost_equal(self.sols[2]['f'], 51.61046271601693, self.tol)
         verify(verify_numpy_array(self.sols[2]['F']))
 
     def test_valtonenornhag_arxiv_2021_fEf_sol3(self):

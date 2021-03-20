@@ -1,0 +1,33 @@
+include *.in
+include *.txt
+include LICENSE
+include tox.ini
+include .gitmodules
+include lib/DronePoseLib/LICENSE
+include lib/pybind11/.clang-tidy
+include lib/pybind11/LICENSE
+include lib/pybind11/docs/Doxyfile
+recursive-include lib *.cpp
+recursive-include lib *.hpp
+recursive-include lib *.h
+recursive-include lib *.txt
+recursive-include lib *.cmake
+recursive-include lib *.css
+recursive-include lib *.in
+recursive-include lib *.ini
+recursive-include lib *.m
+recursive-include lib *.md
+recursive-include lib *.png
+recursive-include lib *.py
+recursive-include lib *.rst
+recursive-include lib *.sh
+recursive-include lib *.svg
+recursive-include lib *.toml
+recursive-include lib *.yaml
+recursive-include lib *.yml
+recursive-include lib Makefile
+recursive-include src *.cpp
+recursive-include src *.py
+recursive-include tests *.json
+recursive-include tests *.py
+recursive-include tests *.txt

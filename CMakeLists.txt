@@ -37,8 +37,8 @@ SET(HDRS_DRONEPOSELIB
 
 # Generate python module
 add_subdirectory(lib/pybind11)
-pybind11_add_module(homlib "${SOURCE_DIR}/bindings.cpp" ${HDRS_DRONEPOSELIB} ${SRCS_DRONEPOSELIB})
-target_link_libraries(homlib PRIVATE Eigen3::Eigen)
+pybind11_add_module(droneposelib "${SOURCE_DIR}/bindings.cpp" ${HDRS_DRONEPOSELIB} ${SRCS_DRONEPOSELIB})
+target_link_libraries(droneposelib PRIVATE Eigen3::Eigen)
 
 add_library(${PROJECT_NAME} STATIC ${HDRS_DRONEPOSELIB} ${SRCS_DRONEPOSELIB})
 
