@@ -13,7 +13,7 @@ Wrapps the C++/Eigen library [DronePoseLib](https://github.com/marcusvaltonen/Dr
 List will be updated.
 
 ## Installation
-A pre-alpha release soon be available at PyPi, and can be installed using
+A pre-alpha release is available at PyPi, and can be installed using
 ```bash
     $ pip install droneposelib
 ```
