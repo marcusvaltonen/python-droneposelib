@@ -36,6 +36,7 @@ py::list get_valtonenornhag_arxiv_2021_fEf_wrapper(const Eigen::Ref<const Eigen:
         py::dict d;
         d["F"] = posedata[i].F;
         d["f"] = posedata[i].f;
+        d["t"] = posedata[i].t;
         lst.append(d);
     }
 
@@ -71,6 +72,7 @@ py::list get_valtonenornhag_arxiv_2021_frEfr_wrapper(const Eigen::Ref<const Eige
         d["F"] = posedata[i].F;
         d["f"] = posedata[i].f;
         d["r"] = posedata[i].r;
+        d["t"] = posedata[i].t;
         lst.append(d);
     }
 
