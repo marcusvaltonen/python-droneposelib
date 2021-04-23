@@ -100,7 +100,7 @@ class ValtonenOrnhagArxiv2021fEfTestCase(unittest.TestCase):
 
 class ValtonenOrnhagArxiv2021frEfrTestCase(unittest.TestCase):
     def setUp(self):
-        self.tol = 6
+        self.tol = 12
         self.p1 = np.array([
             [99.0825859985542, 1136.84241396289, -1031.66650596755, -117.325418998838],
             [-301.923289351466, 1760.62028612233, -533.989983528509, 566.900954605729]
@@ -135,48 +135,48 @@ class ValtonenOrnhagArxiv2021frEfrTestCase(unittest.TestCase):
         assert len(self.sols) == 9
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol0(self):
-        np.testing.assert_almost_equal(self.sols[0]['f'], -125306.614892352, self.tol)
-        np.testing.assert_almost_equal(self.sols[0]['r'], -203321.4180906687, self.tol)
+        np.testing.assert_almost_equal(self.sols[0]['f'], -125306.61489253663, self.tol)
+        np.testing.assert_almost_equal(self.sols[0]['r'], -6.991524837665502e-07, self.tol)
         verify(verify_numpy_array(self.sols[0]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol1(self):
-        np.testing.assert_almost_equal(self.sols[1]['f'], -4414.62813326810, self.tol)
-        np.testing.assert_almost_equal(self.sols[1]['r'], -86722.00865063918, self.tol)
+        np.testing.assert_almost_equal(self.sols[1]['f'], -4414.6281332680255, self.tol)
+        np.testing.assert_almost_equal(self.sols[1]['r'], -2.982071850301965e-07, self.tol)
         verify(verify_numpy_array(self.sols[1]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol2(self):
-        np.testing.assert_almost_equal(self.sols[2]['f'], 2445.470419511240, self.tol)
-        np.testing.assert_almost_equal(self.sols[2]['r'], 1.987432298474289e-08, self.tol)
+        np.testing.assert_almost_equal(self.sols[2]['f'], 2445.4704195562417, self.tol)
+        np.testing.assert_almost_equal(self.sols[2]['r'], 6.834096677276125e-20, self.tol)
         verify(verify_numpy_array(self.sols[2]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol3(self):
-        np.testing.assert_almost_equal(self.sols[3]['f'], 2291.313422912460, self.tol)
-        np.testing.assert_almost_equal(self.sols[3]['r'], 9774.556116633164, self.tol)
+        np.testing.assert_almost_equal(self.sols[3]['f'], 2291.3134229111174, self.tol)
+        np.testing.assert_almost_equal(self.sols[3]['r'], 3.3611339383695934e-08, self.tol)
         verify(verify_numpy_array(self.sols[3]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol4(self):
-        np.testing.assert_almost_equal(self.sols[4]['f'], -75.4204581489593, self.tol)
-        np.testing.assert_almost_equal(self.sols[4]['r'], 190060.1388957948, self.tol)
+        np.testing.assert_almost_equal(self.sols[4]['f'], -75.42045814895216, self.tol)
+        np.testing.assert_almost_equal(self.sols[4]['r'], 6.535515019596585e-07, self.tol)
         verify(verify_numpy_array(self.sols[4]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol5(self):
-        np.testing.assert_almost_equal(self.sols[5]['f'], 1081.280695559530, self.tol)
-        np.testing.assert_almost_equal(self.sols[5]['r'], -15606.02225174152, self.tol)
+        np.testing.assert_almost_equal(self.sols[5]['f'], 1081.2806955591127, self.tol)
+        np.testing.assert_almost_equal(self.sols[5]['r'], -5.366374738814335e-08, self.tol)
         verify(verify_numpy_array(self.sols[5]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol6(self):
-        np.testing.assert_almost_equal(self.sols[6]['f'], 7.142069186813480, self.tol)
-        np.testing.assert_almost_equal(self.sols[6]['r'], -10387926.073495165, self.tol)
+        np.testing.assert_almost_equal(self.sols[6]['f'], 7.142069186718984, self.tol)
+        np.testing.assert_almost_equal(self.sols[6]['r'], -3.572050787197254e-05, self.tol)
         verify(verify_numpy_array(self.sols[6]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol7(self):
-        np.testing.assert_almost_equal(self.sols[7]['f'], 96.42064345373980, self.tol)
-        np.testing.assert_almost_equal(self.sols[7]['r'], -1845837.551419409, self.tol)
+        np.testing.assert_almost_equal(self.sols[7]['f'], 96.42064345387635, self.tol)
+        np.testing.assert_almost_equal(self.sols[7]['r'], -6.347201002333305e-06, self.tol)
         verify(verify_numpy_array(self.sols[7]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol8(self):
-        np.testing.assert_almost_equal(self.sols[8]['f'], 944.9706198704850, self.tol)
-        np.testing.assert_almost_equal(self.sols[8]['r'], 483098.2018965589, self.tol)
+        np.testing.assert_almost_equal(self.sols[8]['f'], 944.9706198704988, self.tol)
+        np.testing.assert_almost_equal(self.sols[8]['r'], 1.6612086957195312e-06, self.tol)
         verify(verify_numpy_array(self.sols[8]['F']))
 
     def test_valtonenornhag_arxiv_2021_frEfr_sol0_t(self):
