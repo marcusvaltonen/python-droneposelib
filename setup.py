@@ -74,7 +74,7 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='droneposelib',
-    version='0.0.0a2',
+    version='0.0.0a3',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     ext_modules=[CMakeExtension('droneposelib')],
