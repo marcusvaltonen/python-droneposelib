@@ -15,11 +15,20 @@ The current list of solvers are the following:
 | Solver  | Approx. runtime\* | Max. solutions | Comment |
 | --- | :---: | :---: | --- |
 | `fEf` | 2.5 us | 4 | Valtonen Örnhag et al. (ArXiV 2021) |
-| `frEfr` | 23\*\* us | 8 | Valtonen Örnhag et al. (ArXiV 2021) |
-| `rEr` | 2.2 us | Valtonen Örnhag et al. (ArXiV 2021)\*\*\* |
+| `frEfr` | 23\*\* us | 11 | Valtonen Örnhag et al. (ArXiV 2021) |
+| `rEr` | 2.2 us | 4 | Valtonen Örnhag et al. (ArXiV 2021)\*\*\* |
+
 \* Measured on a laptop with an Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz
+
 \*\* If using the `use_fast_solver` option
+
 \*\*\* Undocumented
+
+Note that all solvers assume that all three degrees of freedom for the rotation matrices are available,
+i.e. potential IMU drift is ignored. By using e.g. magnetometer data one can often get good estimates,
+if fused with accelerometer data and gyroscope data. This approach is e.g. used in the Madgwick filter.
+Futhermore, we have succesfully used pre-integration techniques to achieve robust and accurate performance
+for shorter time frames without the need of magnetometer data.
 
 ## Installation
 A pre-alpha release is available at PyPi, and can be installed using
