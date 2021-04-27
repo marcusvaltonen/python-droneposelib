@@ -13,6 +13,12 @@ class ExampleTestCase(unittest.TestCase):
         N = 4
         distortion_param = -1e-07
         R1, R2, f, F, x1, x2, R, t, x1u, x2u = generate_points_realistic(N, distortion_param, rng)
+        np.set_printoptions(precision=16)
+        print(f'R1 = {R1}')
+        print(f'R2 = {R2}')
+        print(f'f = {f}')
+        print(f'F = {F}')
+        np.set_printoptions(precision=8)
         use_fast_solver = False
         out = dpl.get_valtonenornhag_arxiv_2021_frEfr(np.asfortranarray(x1[:2, :]), np.asfortranarray(x2[:2, :]),
                                                       np.asfortranarray(R1), np.asfortranarray(R2), use_fast_solver)
