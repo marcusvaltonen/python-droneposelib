@@ -132,18 +132,22 @@ PYBIND11_MODULE(droneposelib, m) {
   m.def("get_valtonenornhag_arxiv_2021_fEf", &get_valtonenornhag_arxiv_2021_fEf_wrapper, R"doc(
         Valtonen Ornhag et al. (ArXiV, 2021) 3-point relative pose using IMU data.
 
-        More info to be added...
+        Minimal solver using three point correspondences. Computes the relative pose with unknown and
+        equal focal length. No (or negligble) radial distortion assumed.
     )doc");
 
   m.def("get_valtonenornhag_arxiv_2021_frEfr", &get_valtonenornhag_arxiv_2021_frEfr_wrapper, R"doc(
         Valtonen Ornhag et al. (ArXiV, 2021) 4-point radial relative pose using IMU data.
 
-        More info to be added...
+        Minimal solver using four point correspondences. Computes the relative pose with unknown and
+        equal focal length and a single radial distortion parameter (Fitzgibbon's division model assumed).
     )doc");
 
   m.def("get_valtonenornhag_arxiv_2021_rEr", &get_valtonenornhag_arxiv_2021_rEr_wrapper, R"doc(
         Valtonen Ornhag et al. (ArXiV extra, 2021) 3-point radial relative pose using IMU data.
 
-        More info to be added...
+        Minimal solver using three point correspondences. Computes the relative pose with unknown and
+        equal radial distortion parameter (Fitzgibbon's division model assumed). Focal length is assumed
+        to be known and equal in both poses.
     )doc");
 }
