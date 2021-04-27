@@ -51,7 +51,7 @@ def radialdistort(x, kappa):
 
 def generate_points_realistic(N=100, distortion_param=0):
     # Relative translation
-    t = np.random.randn(3,1)
+    t = np.random.randn(3, 1)
 
     # Make sure the baseline is okay
     t = t / np.linalg.norm(t)
@@ -83,9 +83,6 @@ def generate_points_realistic(N=100, distortion_param=0):
     x1 = pflat(P1 @ X)
     x2 = pflat(P2 @ X)
 
-    # Check Ground Truth
-    reproj = np.diag(x2.T @ F @ x1)
-
     # Add radial distortion (if desired)
     x1u = x1
     x2u = x2
@@ -102,7 +99,7 @@ def compare_to_gt(sols, f, F, r):
     F /= F[2, 2]
     normF = np.linalg.norm(F)
     f_err = min([abs(f - sol['f']) / f for sol in sols])
-    F_err = min([np.linalg.norm(F - sol['F'] / sol['F'][2, 2]) / normF  for sol in sols])
+    F_err = min([np.linalg.norm(F - sol['F'] / sol['F'][2, 2]) / normF for sol in sols])
     r_err = min([abs(r - sol['r']) / abs(r) for sol in sols])
 
     return f_err, F_err, r_err
