@@ -235,3 +235,103 @@ class ValtonenOrnhagArxiv2021frEfrTestCase(unittest.TestCase):
                 np.asfortranarray(R2),
                 False
             )
+
+
+class ValtonenOrnhagArxiv2021rErTestCase(unittest.TestCase):
+    def setUp(self):
+        self.tol = 12
+        self.p1 = np.array([
+            [99.0825859985542, 1136.84241396289, -1031.66650596755],
+            [-301.923289351466, 1760.62028612233, -533.989983528509]
+        ])
+
+        self.p2 = np.array([
+            [1829.78818884974, 15378.7866880232, 612.159309750213],
+            [474.180433404958, 4677.92468041337, 1092.76420021176]
+        ])
+
+        self.R1 = np.array([
+            [0.983417707845482, 0.013453875580959, 0.180855204867843],
+            [-0.060089831339915, 0.965084992860598, 0.254951306575981],
+            [-0.171110560940808, -0.261591188282616, 0.949890112669571]
+        ])
+
+        self.R2 = np.array([
+            [0.556837962037774, 0.329755275145440, 0.762360113428931],
+            [-0.787076103923440, 0.502747650438714, 0.357429722618378],
+            [-0.265410419287405, -0.799065866178820, 0.539491474299248]
+        ])
+        focal_length = 1.0
+
+        self.sols = dpl.get_valtonenornhag_arxiv_2021_rEr(
+            np.asfortranarray(self.p1),
+            np.asfortranarray(self.p2),
+            np.asfortranarray(self.R1),
+            np.asfortranarray(self.R2),
+            focal_length
+        )
+
+    def test_valtonenornhag_arxiv_2021_rEr_length(self):
+        assert len(self.sols) == 4
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol0(self):
+        np.testing.assert_almost_equal(self.sols[0]['f'], 1.0, self.tol)
+        np.testing.assert_almost_equal(self.sols[0]['r'], -4.287487605107101e-05, self.tol)
+        verify(verify_numpy_array(self.sols[0]['F']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol1(self):
+        np.testing.assert_almost_equal(self.sols[1]['f'], 1.0, self.tol)
+        np.testing.assert_almost_equal(self.sols[1]['r'], -0.00024691393053107155, self.tol)
+        verify(verify_numpy_array(self.sols[1]['F']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol2(self):
+        np.testing.assert_almost_equal(self.sols[2]['f'], 1.0, self.tol)
+        np.testing.assert_almost_equal(self.sols[2]['r'], 0.0018460404126675477, self.tol)
+        verify(verify_numpy_array(self.sols[2]['F']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol3(self):
+        np.testing.assert_almost_equal(self.sols[3]['f'], 1.0, self.tol)
+        np.testing.assert_almost_equal(self.sols[3]['r'], -0.0010992419476161233, self.tol)
+        verify(verify_numpy_array(self.sols[3]['F']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol0_t(self):
+        verify(verify_numpy_array(self.sols[0]['t']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol1_t(self):
+        verify(verify_numpy_array(self.sols[1]['t']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol2_t(self):
+        verify(verify_numpy_array(self.sols[2]['t']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_sol3_t(self):
+        verify(verify_numpy_array(self.sols[3]['t']))
+
+    def test_valtonenornhag_arxiv_2021_rEr_dimensions01(self):
+        """Check that an exception is raised when dimensions are incorrect."""
+        p1 = np.random.randn(2, 2)
+        p2 = np.random.randn(3, 2)
+        R1 = np.random.randn(3, 3)
+        R2 = np.random.randn(3, 3)
+        with self.assertRaises(ValueError):
+            sols = dpl.get_valtonenornhag_arxiv_2021_rEr( # noqa
+                np.asfortranarray(p1),
+                np.asfortranarray(p2),
+                np.asfortranarray(R1),
+                np.asfortranarray(R2),
+                1.0
+            )
+
+    def test_valtonenornhag_arxiv_2021_rEr_dimensions02(self):
+        """Check that an exception is raised when dimensions are incorrect."""
+        p1 = np.random.randn(2, 3)
+        p2 = np.random.randn(2, 2)
+        R1 = np.random.randn(3, 3)
+        R2 = np.random.randn(3, 3)
+        with self.assertRaises(ValueError):
+            sols = dpl.get_valtonenornhag_arxiv_2021_rEr( # noqa
+                np.asfortranarray(p1),
+                np.asfortranarray(p2),
+                np.asfortranarray(R1),
+                np.asfortranarray(R2),
+                1.0
+            )

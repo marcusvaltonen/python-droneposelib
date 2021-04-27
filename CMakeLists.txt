@@ -14,6 +14,7 @@ include_directories(${DRONEPOSELIB_DIR}/includes/DronePoseLib)
 include_directories(${DRONEPOSELIB_DIR}/src/helpers)
 include_directories(${DRONEPOSELIB_DIR}/src/solvers/valtonenornhag_arxiv_2021/fEf)
 include_directories(${DRONEPOSELIB_DIR}/src/solvers/valtonenornhag_arxiv_2021/frEfr)
+include_directories(${DRONEPOSELIB_DIR}/src/solvers/valtonenornhag_arxiv_2021/rEr)
 SET(SRCS_DRONEPOSELIB
     ${DRONEPOSELIB_DIR}/src/helpers/normalize2dpts.cpp
     ${DRONEPOSELIB_DIR}/src/helpers/quartic.cpp
@@ -22,6 +23,7 @@ SET(SRCS_DRONEPOSELIB
     ${DRONEPOSELIB_DIR}/src/solvers/valtonenornhag_arxiv_2021/frEfr/coeffs_frEfr.cpp
     ${DRONEPOSELIB_DIR}/src/solvers/valtonenornhag_arxiv_2021/frEfr/get_frEfr.cpp
     ${DRONEPOSELIB_DIR}/src/solvers/valtonenornhag_arxiv_2021/frEfr/solver_frEfr.cpp
+    ${DRONEPOSELIB_DIR}/src/solvers/valtonenornhag_arxiv_2021/rEr/get_rEr.cpp
 )
 SET(HDRS_DRONEPOSELIB
     ${DRONEPOSELIB_DIR}/includes/DronePoseLib/relpose.hpp
