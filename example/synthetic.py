@@ -49,20 +49,25 @@ def radialdistort(x, kappa):
     return y
 
 
-def generate_points_realistic(N=100, distortion_param=0):
+def generate_points_realistic(N=100, distortion_param=0, rng=None):
+    """Generates two poses and the corresponding scene points and image points."""
+    # Check if a seed is used (for unittests)
+    if not rng:
+        rng = np.random.default_rng()
+
     # Relative translation
-    t = np.random.randn(3, 1)
+    t = 2 * rng.random((3, 1)) - 1
 
     # Make sure the baseline is okay
     t = t / np.linalg.norm(t)
 
     # Calibration matrix
-    f = np.random.rand() * 200 + 200
+    f = rng.random() * 200 + 200
     K = np.diag([f, f, 1.0])
     Kinv = np.diag([1.0 / f, 1.0 / f, 1.0])
 
-    R1, _ = np.linalg.qr(np.random.randn(3, 3))
-    R2, _ = np.linalg.qr(np.random.randn(3, 3))
+    R1, _ = np.linalg.qr(rng.random((3, 3)))
+    R2, _ = np.linalg.qr(rng.random((3, 3)))
 
     R = R2 @ R1.T
 
@@ -74,9 +79,9 @@ def generate_points_realistic(N=100, distortion_param=0):
 
     # Generate points with y-coordinate in front of scene
     X = np.vstack((
-            6 * np.random.rand(1, N) - 3,
-            5 * np.random.rand(1, N) + 3,
-            6 * np.random.rand(1, N) - 3,
+            6 * rng.random((1, N)) - 3,
+            5 * rng.random((1, N)) + 3,
+            6 * rng.random((1, N)) - 3,
             np.ones((1, N))))
 
     # Generate point correspondences (pinhole)
